@@ -5,11 +5,47 @@
   height: 20%;
   max-height: 350px;
   min-height: 150px;
-  // background-color: $background-color-main;
-  background-color:#df2020;
+  background-color: $background-color-footer;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 1rem;
+  padding: 1rem;
 }
 
+.footer__logo {
+  height: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    display: inline-block;
+    height: 90%;
+    object-fit: contain;
+  }
+  h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+}
+
+.footer__schedule {
+  h5 {
+    margin-top: .3rem;
+  }
+  p {
+    font-weight: 500;
+  }
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    margin: 0 1rem;
+    color: black;
+  }
+}
