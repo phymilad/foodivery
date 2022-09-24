@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react"
-import "../../styles/header.scss"
+import React, { useRef } from "react"
+import "../../styles/Header.scss"
 import logo from "../../assets/images/res-logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -19,8 +19,8 @@ const navLinks = [
 export default function Header() {
   const showMobileMenuRef = useRef(null)
 
-  const toggleMobileMenu = () => {
-    console.log("11111")
+  const toggleMobileMenu = (e) => {
+    e.stopPropagation()
     showMobileMenuRef.current.classList.toggle("show__menu")
   }
 
@@ -31,7 +31,11 @@ export default function Header() {
         <h5>Foodivery</h5>
       </div>
 
-      <div ref={showMobileMenuRef} className="header__navigation show__menu">
+      <div
+        ref={showMobileMenuRef}
+        className="header__navigation show__menu"
+        onClick={toggleMobileMenu}
+      >
         <div className="header__navigation-menu">
           {navLinks.map((item, index) => {
             return (

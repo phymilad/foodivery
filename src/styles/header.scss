@@ -102,17 +102,12 @@
       color: $hover-link-color;
     }
   }
+  .mobile__menu {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 48rem) {
-
-  // .mobile-backdrop {
-  //   display: none;
-  // }
-
-  // .mobile-navigation {
-  //   display: none;
-  // }
 
   .header__navigation {
     position: static;
@@ -131,7 +126,6 @@
     align-items: center;
     gap: 2rem;
     padding: 0;
-    // border: 1px solid red;
     a {
       text-decoration: none;
     }
@@ -139,18 +133,11 @@
       color: $active-color;
     }
   }
-  
-  // .active__menu {
-  //   color: $active-color;
-  //   border-bottom: 2px solid $active-color;
-  // }
-
 
   .header__right {
     .mobile__menu {
       display: none;
     }
   }
-
 
 }
