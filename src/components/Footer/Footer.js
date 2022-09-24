@@ -9,20 +9,29 @@ export default function Footer() {
   return (
     <div className="footer__container">
       <div className="footer__logo">
-        <img src={logo} alt="Foodivery logo" />
-        <h5>Foodivery</h5>
+        <div>
+          <img src={logo} alt="Foodivery logo" />
+          <h5>Foodivery</h5>
+        </div>
+        <p>lorem ipsum is a testimonial passage for web developers.</p>
       </div>
       <div className="footer__schedule">
         <h3>Delivery Time</h3>
-        <h5>Sunday - Thursday</h5>
-        <p>11:00 am - 11:00 pm</p>
-        <h5>Friday - Saturday</h5>
-        <p>Off days</p>
+        <div>
+          <strong>Sunday-Thursday </strong> 11:00 am - 11:00 pm
+        </div>
+        <div>
+          <strong>Friday - Saturday</strong> Off days
+        </div>
       </div>
-      <div className="contact">
+      <div className="footer__contact">
         <h3>Contact</h3>
-        <h5>Phone: 09357064101</h5>
-        <h5>Email: phy.milad@gmail.com</h5>
+        <div>
+          <strong>Phone:</strong> 09357064101
+        </div>
+        <div>
+          <strong>Email:</strong> phy.milad@gmail.com
+        </div>
       </div>
       <div className="footer__social">
         <h3>Follow us</h3>
