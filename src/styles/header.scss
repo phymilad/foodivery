@@ -9,6 +9,39 @@
   padding: 0 1rem;
 }
 
+.mobile-backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.mobile-navigation {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 100;
+  a {
+    text-decoration: none;
+    line-height: 2rem;
+    padding: 1rem 1rem 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .mobile-navigation__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
 .header__logo {
   height: 4rem;
   display: flex;
@@ -65,6 +98,15 @@
 }
 
 @media (min-width: 48rem) {
+
+  .mobile-backdrop {
+    display: none;
+  }
+
+  .mobile-navigation {
+    display: none;
+  }
+
   .header__navigation {
     display: flex;
     gap: 1rem;

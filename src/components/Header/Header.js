@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "../../styles/header.scss"
 import logo from "../../assets/images/res-logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,8 +17,37 @@ const navLinks = [
 ]
 
 export default function Header() {
+  const [showMobileNavigation, setShowMobileNavigation] = useState(false)
+
   return (
     <header className="header">
+      {showMobileNavigation && (
+        <div
+          className="mobile-backdrop"
+          onClick={() => setShowMobileNavigation(false)}
+        />
+      )}
+
+      {showMobileNavigation && (
+        <div className="mobile-navigation">
+          {navLinks.map((item, index) => {
+            return (
+              <NavLink
+                className={(navclass) =>
+                  navclass.isActive
+                    ? "active__menu mobile-navigation__menu"
+                    : "mobile-navigation__menu"
+                }
+                to={item.path}
+                key={index}
+              >
+                {item.display}
+              </NavLink>
+            )
+          })}
+        </div>
+      )}
+
       <div className="header__logo">
         {/* <NavLink to="/home" className="header__logo-navigation"> */}
         <img src={logo} alt="logo" className="logo__image" />
@@ -26,7 +55,7 @@ export default function Header() {
         {/* </NavLink> */}
       </div>
 
-      <div className="header__navigation mobile__navigation-background mobile__navigation-menu">
+      <div className="header__navigation">
         {navLinks.map((item, index) => {
           return (
             <NavLink
@@ -52,7 +81,10 @@ export default function Header() {
             <FontAwesomeIcon icon={faUser} size="2x" />
           </Link>
         </span>
-        <span className="mobile__menu">
+        <span
+          className="mobile__menu"
+          onClick={() => setShowMobileNavigation(true)}
+        >
           <FontAwesomeIcon icon={faBars} size="2x" />
         </span>
       </div>
