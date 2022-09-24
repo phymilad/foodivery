@@ -7,27 +7,35 @@ import {
   faUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 const navLinks = [
   { display: "Home", path: "/home" },
-  { display: "Foods", path: "/foods" },
+  { display: "Foods", path: "/allfoods" },
   { display: "Cart", path: "/cart" },
   { display: "Contact", path: "/contact" },
 ]
 
 export default function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__logo">
-        <img src={logo} alt="logo" />
+        {/* <NavLink to="/home" className="header__logo-navigation"> */}
+        <img src={logo} alt="logo" className="logo__image" />
         <h5>Foodivery</h5>
+        {/* </NavLink> */}
       </div>
 
-      <div className="header__navigation">
+      <div className="header__navigation mobile__navigation-background mobile__navigation-menu">
         {navLinks.map((item, index) => {
           return (
-            <NavLink className="menu" to={item.path} key={index}>
+            <NavLink
+              className={(navclass) =>
+                navclass.isActive ? "active__menu menu" : "menu"
+              }
+              to={item.path}
+              key={index}
+            >
               {item.display}
             </NavLink>
           )
@@ -40,12 +48,14 @@ export default function Header() {
           <span className="cart__badge">2</span>
         </span>
         <span className="user">
-          <FontAwesomeIcon icon={faUser} size="2x" />
+          <Link to="/login">
+            <FontAwesomeIcon icon={faUser} size="2x" />
+          </Link>
         </span>
         <span className="mobile__menu">
           <FontAwesomeIcon icon={faBars} size="2x" />
         </span>
       </div>
-    </div>
+    </header>
   )
 }
