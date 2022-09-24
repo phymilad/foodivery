@@ -7,39 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-}
-
-.mobile-backdrop {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99;
-}
-
-.mobile-navigation {
-  width: 50%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  z-index: 100;
-  a {
-    text-decoration: none;
-    line-height: 2rem;
-    padding: 1rem 1rem 0 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .mobile-navigation__menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+  // border: 1px solid blue;
 }
 
 .header__logo {
@@ -63,7 +31,46 @@
 }
 
 .header__navigation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+.show__menu {
   display: none;
+}
+
+.header__navigation-menu {
+  width: 15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .active__menu {
+    color: $active-color;
+    border-bottom: 2px solid $active-color;
+  }
+
 }
 
 .header__right {
@@ -99,36 +106,51 @@
 
 @media (min-width: 48rem) {
 
-  .mobile-backdrop {
-    display: none;
-  }
+  // .mobile-backdrop {
+  //   display: none;
+  // }
 
-  .mobile-navigation {
-    display: none;
-  }
+  // .mobile-navigation {
+  //   display: none;
+  // }
 
   .header__navigation {
+    position: static;
+    width: auto;
+    height: inherit;
+    display: inline-block;
+  }
+
+  .header__navigation-menu {
+    position: static;
+    width: auto;
+    height: inherit;
     display: flex;
-    gap: 1rem;
-
-
-
-    .menu {
-      font-size: 1rem;
-      font-weight: 600;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    // border: 1px solid red;
+    a {
       text-decoration: none;
-      &:hover {
-        color: $active-color;
-      }
     }
-    .active__menu {
+    a:hover {
       color: $active-color;
-      border-bottom: 2px solid $active-color;
     }
   }
+  
+  // .active__menu {
+  //   color: $active-color;
+  //   border-bottom: 2px solid $active-color;
+  // }
+
+
   .header__right {
     .mobile__menu {
       display: none;
     }
   }
+
+
 }

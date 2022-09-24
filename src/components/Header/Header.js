@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import "../../styles/header.scss"
 import logo from "../../assets/images/res-logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,26 +17,28 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [showMobileNavigation, setShowMobileNavigation] = useState(false)
+  const showMobileMenuRef = useRef(null)
+
+  const toggleMobileMenu = () => {
+    console.log("11111")
+    showMobileMenuRef.current.classList.toggle("show__menu")
+  }
 
   return (
     <header className="header">
-      {showMobileNavigation && (
-        <div
-          className="mobile-backdrop"
-          onClick={() => setShowMobileNavigation(false)}
-        />
-      )}
+      <div className="header__logo">
+        <img src={logo} alt="logo" className="logo__image" />
+        <h5>Foodivery</h5>
+      </div>
 
-      {showMobileNavigation && (
-        <div className="mobile-navigation">
+      <div ref={showMobileMenuRef} className="header__navigation show__menu">
+        <div className="header__navigation-menu">
           {navLinks.map((item, index) => {
             return (
               <NavLink
+                onClick={toggleMobileMenu}
                 className={(navclass) =>
-                  navclass.isActive
-                    ? "active__menu mobile-navigation__menu"
-                    : "mobile-navigation__menu"
+                  navclass.isActive ? "active__menu" : ""
                 }
                 to={item.path}
                 key={index}
@@ -46,29 +48,6 @@ export default function Header() {
             )
           })}
         </div>
-      )}
-
-      <div className="header__logo">
-        {/* <NavLink to="/home" className="header__logo-navigation"> */}
-        <img src={logo} alt="logo" className="logo__image" />
-        <h5>Foodivery</h5>
-        {/* </NavLink> */}
-      </div>
-
-      <div className="header__navigation">
-        {navLinks.map((item, index) => {
-          return (
-            <NavLink
-              className={(navclass) =>
-                navclass.isActive ? "active__menu menu" : "menu"
-              }
-              to={item.path}
-              key={index}
-            >
-              {item.display}
-            </NavLink>
-          )
-        })}
       </div>
 
       <div className="header__right">
@@ -81,10 +60,7 @@ export default function Header() {
             <FontAwesomeIcon icon={faUser} size="2x" />
           </Link>
         </span>
-        <span
-          className="mobile__menu"
-          onClick={() => setShowMobileNavigation(true)}
-        >
+        <span className="mobile__menu" onClick={toggleMobileMenu}>
           <FontAwesomeIcon icon={faBars} size="2x" />
         </span>
       </div>
