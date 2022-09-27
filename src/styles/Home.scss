@@ -1,7 +1,120 @@
+@import '../styles/shared.scss';
+
 .home__container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1rem 0;
+}
+
+.home__description-container {
+  display: inline-block;
+  h1,h3,h5,p {
+    text-align: center;
+  }
+}
+
+.order__link-container {
+  display: flex;
+  gap: 3rem;
+  margin: 1rem 0;
+  a {
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    transition: .3s;
+  }
+  .order__link-order {
+    background-color: $main-color;
+    color: #fff;
+    // transition: 0.3s;
+  }
+  .order__link-order:hover {
+    background-color: $hover-color;
+  }
+  .order__link-foods {
+    border: 1px solid $main-color;
+    color: $main-color;
+  }
+  .order__link-foods:hover {
+    background-color: $hover-color;
+    color: white;
+    border-color: $hover-color;
+  }
+
+}
+
+.delivery__info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  p {
+    font-size: .9rem;
+    font-weight: 600;
+  }
+}
+
+.delivery__image-container {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  // max-height: 10rem;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+  
+}
+
+.home__message-to-customers {
+  margin: 2rem 0;
+  h2,h5,p {
+    text-align: center;
+    strong {
+      color: $orangish-color;
+    }
+  }
+}
+
+.home__features-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  .feature-container {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    img {
+      height: 40%;
+      object-fit: contain;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.home__popular-foods-container {
+  background-color: $main-color;
+  border-radius: .3rem;
+}
+
+.home__popular-foods-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  button {
+
+  }
 }

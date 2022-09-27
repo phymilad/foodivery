@@ -67,8 +67,8 @@
   }
 
   .active__menu {
-    color: $active-color;
-    border-bottom: 2px solid $active-color;
+    color: $main-color;
+    border-bottom: 2px solid $main-color;
   }
 
 }
@@ -130,7 +130,7 @@
       text-decoration: none;
     }
     a:hover {
-      color: $active-color;
+      color: $main-color;
     }
   }
 

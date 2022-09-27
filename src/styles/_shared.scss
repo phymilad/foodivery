@@ -1,5 +1,7 @@
 // variables
-$active-color: #e01a1a;
+$main-color: #e01a1a;
+$orangish-color: #df2020;
+$hover-color: #212245;
 $hover-link-color: gray;
 $background-color-footer: #ffb1b1;
 $tablet-width: 48rem;
@@ -9,8 +11,8 @@ $monitor-width: 62rem;
 // shared classes
 .flex-center  {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 
