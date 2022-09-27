@@ -106,15 +106,49 @@
 }
 
 .home__popular-foods-container {
-  background-color: $main-color;
-  border-radius: .3rem;
-}
+  // background-color: $main-color;
+  // border-radius: .3rem;
+  h2 {
+    text-align: center;
+    margin: .5rem 0;
+  }
+  
+  .home__popular-foods-btn-container {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background-color: $main-color;
+    border-radius: .3rem;
+    padding: .5rem .3rem;
+    .food__button-active {
+      background-color: #fff;
+      border-radius: .3rem;
+      color: $orangish-color;
+      font-weight: 600;
+    }
 
-.home__popular-foods-btn-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  button {
+    button {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      border: none;
+      outline: none;
+      padding: .5rem 1rem;
+      background-color: transparent;
+      color: #fff;
 
+      img {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  .home__popular-items-container {
+    display: grid;
+    // justify-content: center;
+    margin: auto;
+    grid-template-columns: 1fr;
+    margin-top: .5rem;
   }
 }

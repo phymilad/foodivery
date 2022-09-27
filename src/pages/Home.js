@@ -2,7 +2,8 @@ import "../styles/Home.scss"
 import React from "react"
 import { Link } from "react-router-dom"
 import deliveryImg from "../assets/images/hero.png"
-import Categories from "../components/UI/Category/Categories"
+import Categories from "../components/UI/category/Categories"
+import products from "../assets/fake-data/products"
 
 import featureImage01 from "../assets/images/service-01.png"
 import featureImage02 from "../assets/images/service-02.png"
@@ -11,6 +12,7 @@ import featureImage03 from "../assets/images/service-03.png"
 import foodCategoryImg01 from "../assets/images/hamburger.png"
 import foodCategoryImg02 from "../assets/images/pizza.png"
 import foodCategoryImg03 from "../assets/images/bread.png"
+import ProductCard from "../components/UI/productCard/ProductCard"
 
 const featureData = [
   {
@@ -91,6 +93,7 @@ export default function Home() {
       <section className="home__popular-foods-container">
         <h2>Popular Foods</h2>
         <div className="home__popular-foods-btn-container">
+          <button className="all__foods-button food__button-active">All</button>
           <button>
             <img src={foodCategoryImg01} alt="Hamburger" />
             Hamburger
@@ -103,6 +106,11 @@ export default function Home() {
             <img src={foodCategoryImg03} alt="Bread" />
             Bread
           </button>
+        </div>
+        <div className="home__popular-items-container">
+          {products.map((product, index) => {
+            return <ProductCard key={index} title={product.title} />
+          })}
         </div>
       </section>
     </div>
