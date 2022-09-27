@@ -44,9 +44,9 @@ export default function Home() {
     <div className="home__container">
       <section className="home__description-container">
         <h5>Easy way to make an order</h5>
-        <h1>
-          HUNGRY? <span>Just Wait</span>
-        </h1>
+        <h2>
+          <span>HUNGRY?</span>Just Wait
+        </h2>
         <h3>
           Food at <span>your door</span>
         </h3>
@@ -127,6 +127,33 @@ export default function Home() {
         <h2>
           Why <span>Foodivery?</span>
         </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </p>
+        <div className="location__options-container">
+          <div className="location__option">
+            <h4>Fresh and tasty food</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </p>
+          </div>
+          <div className="location__option">
+            <h4>Quality support</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </p>
+          </div>
+          <div className="location__option">
+            <h4>Order from any location</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   )
