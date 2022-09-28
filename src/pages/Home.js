@@ -74,7 +74,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <Categories />
+
       <section className="home__message-to-customers">
         <h5>
           <strong>What we serve</strong>
@@ -92,6 +94,7 @@ export default function Home() {
           eiusmod
         </p>
       </section>
+
       <section className="home__features-container">
         {featureData.map((feature, index) => {
           return (
@@ -103,6 +106,7 @@ export default function Home() {
           )
         })}
       </section>
+
       <section className="home__popular-foods-container">
         <h2>Popular Foods</h2>
         <div className="home__popular-foods-btn-container">

@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // border: 2px solid blue;
 }
 
 .home__description-container {
@@ -133,7 +132,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
-  // border: 1px solid black;
   h2 {
     text-align: center;
     margin: .5rem 0;
@@ -190,7 +188,6 @@
   img {
     height: 30vh;
     object-fit: contain;
-    // border: 1px solid black;
   }
 
   h2 {
@@ -239,6 +236,10 @@
 
   .delivery__image-container {
     height: 40vh;
+  }
+
+  .home__message-to-customers {
+    width: 80%;
   }
 
   .home__features-container {
@@ -310,4 +311,54 @@
     }
   }
 
+}
+
+
+@media (min-width: $monitor-width) {
+  .home__introduction-section {
+    width: 60%;
+  }
+
+  .home__message-to-customers {
+    width: 60%;
+  }
+
+  .home__features-container {
+    width: 60%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    margin: 1rem 0;
+    .feature-container {
+      img {
+        height: 50%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .home__popular-foods-container {
+    width: 60%;
+    .home__popular-foods-btn-container {
+      // justify-content: space-around;
+    }
+    .home__popular-items-container {
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .location__container {
+    width: 60%;
+  }
+  
+}
+
+
+@media (min-width: $monitor-width-large) {
+  .home__popular-foods-container {
+  .home__popular-items-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 }

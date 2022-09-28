@@ -35,3 +35,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+@media (min-width: $monitor-width) {
+  .categories__container {
+    // border: 1px solid black;
+    width: 60%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
