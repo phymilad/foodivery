@@ -53,21 +53,24 @@ export default function Home() {
         <p>This resturaunt takes your online orders</p>
         <p>and deliver them to you asap</p>
       </section>
-      <div className="order__link-container">
+
+      <section className="order__link-container">
         <Link className="order__link-order">Order Now</Link>
         <Link to={"/foods"} className="order__link-foods">
           See all foods
         </Link>
-      </div>
-      <div className="delivery__info">
+      </section>
+
+      <section className="delivery__info">
         <p>No shipping charge</p>
         <p>100% Secure Checkout</p>
-      </div>
+      </section>
       <section>
         <div className="delivery__image-container">
-          <img src={deliveryImg} alt="delivery image" />
+          <img src={deliveryImg} alt="delivery bike" />
         </div>
       </section>
+
       <Categories />
       <section className="home__message-to-customers">
         <h5>
@@ -84,7 +87,7 @@ export default function Home() {
         {featureData.map((feature, index) => {
           return (
             <div className="feature-container" key={index}>
-              <img src={feature.imgUrl} alt="feature image" />
+              <img src={feature.imgUrl} alt="feature" />
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
