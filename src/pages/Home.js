@@ -126,10 +126,10 @@ export default function Home() {
         </div>
         <div className="home__popular-items-container">
           {products.map((product, index) => {
-            console.log(product.image01)
             return (
               <ProductCard
                 key={index}
+                id={product.id}
                 title={product.title}
                 price={product.price}
                 mainImg={product.image01}
