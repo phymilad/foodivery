@@ -45,7 +45,7 @@
 }
 
 .header__navigation-menu {
-  width: 15rem;
+  width: $mobile-slide-width;
   height: 100%;
   display: flex;
   flex-direction: column;

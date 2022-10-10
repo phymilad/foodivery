@@ -1,5 +1,7 @@
 import React from "react"
 
-export default function Cart() {
+const ShoppingMenuCart = () => {
   return <div>Cart</div>
 }
+
+export default ShoppingMenuCart

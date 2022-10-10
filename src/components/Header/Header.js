@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { NavLink, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
+import { cartActions } from "../../store/shopping-cart/cartSlice"
 
 const navLinks = [
   { display: "Home", path: "/home" },
@@ -19,6 +20,9 @@ const navLinks = [
 
 export default function Header() {
   const showMobileMenuRef = useRef(null)
+  const cartState = useSelector((state) => state)
+  console.log(cartState)
+
   const totalQuantity = useSelector((state) => state.cart.totalQuantity)
   const dispatch = useDispatch()
 
@@ -27,7 +31,9 @@ export default function Header() {
     showMobileMenuRef.current.classList.toggle("show__menu")
   }
 
-  const handleShowShoppingCart = () => {}
+  const handleShowShoppingCart = () => {
+    dispatch(cartActions.showShoppingCart(true))
+  }
 
   return (
     <header className="header">

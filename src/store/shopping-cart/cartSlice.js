@@ -16,13 +16,18 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id
       )
       if (newItemIndex === -1) {
-        state.cartItems.push(action.payload)
+        state.cartItems.push({ ...action.payload, quantity: 1 })
+      } else {
+        state.cartItems[newItemIndex] = {
+          ...state.cartItems[newItemIndex],
+          quantity: state.cartItems[newItemIndex].quantity + 1,
+        }
       }
       state.totalQuantity++
       state.totalAmount += Number(action.payload.price)
     },
-    showShoppingCart(state) {
-      state.showShoppingCart = !state.showShoppingCart
+    showShoppingCart(state, action) {
+      state.showShoppingCart = action.payload
     },
   },
 })

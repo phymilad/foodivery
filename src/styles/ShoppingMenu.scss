@@ -1,0 +1,35 @@
+@import 'shared';
+
+.shopping-menu__container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 999;
+}
+
+.shopping-menu__main {
+  position: absolute;
+  width: $mobile-slide-width;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.shopping-menu__close {
+
+}
+.shopping-menu__carts {
+  width: 90%;
+  flex-grow: 1;
+  margin: 10px auto;
+  // padding: .5rem;
+  // background-color: orange;
+}
+.shopping-menu__total {
+  background-color: yellow;
+}
