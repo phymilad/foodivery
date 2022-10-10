@@ -3,9 +3,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+  // border: 2px solid orange;
 }
 
 .layout__container-main {
   flex-grow: 1;
+  // border: 2px solid green;
 }
