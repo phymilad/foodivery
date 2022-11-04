@@ -36,7 +36,7 @@ const ShoppingMenuCart = (props) => {
           <h4>{props.title}</h4>
           <div className="shopping-menu-cart__info-number-price">
             <h5>{props.quantity}x</h5>
-            <h5>{`${props.price * props.quantity}`}</h5>
+            <h5>{`${props.price * props.quantity}$`}</h5>
           </div>
         </div>
       </div>
@@ -54,7 +54,6 @@ const ShoppingMenuCart = (props) => {
           />
         </div>
         <FontAwesomeIcon icon={faRemove} size="2x" onClick={handleRemove} />
-        {/* <button>Delete</button> */}
       </div>
     </div>
   )

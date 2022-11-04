@@ -3,28 +3,32 @@ import "../../../styles/ShoppingMenu.scss"
 import { useDispatch, useSelector } from "react-redux"
 import { showShoppingCart } from "../../../store/shopping-cart/cartSlice"
 import ShoppingMenuCart from "./ShoppingMenuCart"
-// import { mainImg } from "../../../assets/images/produc_01.3.jpg"
 
 const ShoppingMenu = () => {
   const dispatch = useDispatch()
-  const shoppingItems = useSelector((state) => {
-    console.log(state.cart)
-    return state.cart.cartItems
+  const cartState = useSelector((state) => {
+    return state.cart
   })
-  console.log(shoppingItems)
   const handleCloseShopMenu = () => {
     dispatch(showShoppingCart(false))
+  }
+
+  const handleShoppingMenuClose = () => {
+    dispatch(showShoppingCart(false))
+  }
+
+  const handleCheckout = () => {
+    console.log("checkout clicked")
   }
 
   return (
     <div className="shopping-menu__container" onClick={handleCloseShopMenu}>
       <div className="shopping-menu__main" onClick={(e) => e.stopPropagation()}>
         <div className="shopping-menu__close">
-          <button>Close</button>
+          <button onClick={handleShoppingMenuClose}>Close</button>
         </div>
         <div className="shopping-menu__carts">
-          {shoppingItems.map((item, index) => {
-            console.log(item)
+          {cartState.cartItems.map((item, index) => {
             return (
               <ShoppingMenuCart
                 key={index}
@@ -37,7 +41,12 @@ const ShoppingMenu = () => {
             )
           })}
         </div>
-        <div className="shopping-menu__total">this is total part</div>
+        <div className="shopping-menu__total">
+          <p>
+            Total: <strong>{cartState.totalAmount}$</strong>
+          </p>
+          <button onClick={handleCheckout}>Checkout</button>
+        </div>
       </div>
     </div>
   )

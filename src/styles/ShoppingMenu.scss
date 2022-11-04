@@ -16,12 +16,16 @@
   left: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   overflow: auto;
   background-color: #fff;
 }
 
 .shopping-menu__close {
-
+  margin-top: .5rem;
+  button {
+    padding: .3rem .5rem;
+  }
 }
 .shopping-menu__carts {
   width: 90%;
@@ -31,5 +35,16 @@
   // background-color: orange;
 }
 .shopping-menu__total {
-  background-color: yellow;
+  width: 100%;
+  min-height: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $main-color;
+  p {
+    color: #fff;
+  }
+  button {
+    padding: .3rem .5rem;
+  }
 }
