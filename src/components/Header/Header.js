@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { NavLink, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import { cartActions } from "../../store/shopping-cart/cartSlice"
+import { showShoppingCart } from "../../store/shopping-cart/cartSlice"
 
 const navLinks = [
   { display: "Home", path: "/home" },
@@ -32,7 +32,7 @@ export default function Header() {
   }
 
   const handleShowShoppingCart = () => {
-    dispatch(cartActions.showShoppingCart(true))
+    dispatch(showShoppingCart(true))
   }
 
   return (

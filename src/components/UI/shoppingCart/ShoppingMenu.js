@@ -1,16 +1,19 @@
 import React from "react"
 import "../../../styles/ShoppingMenu.scss"
 import { useDispatch, useSelector } from "react-redux"
-import { cartActions } from "../../../store/shopping-cart/cartSlice"
+import { showShoppingCart } from "../../../store/shopping-cart/cartSlice"
 import ShoppingMenuCart from "./ShoppingMenuCart"
 // import { mainImg } from "../../../assets/images/produc_01.3.jpg"
 
 const ShoppingMenu = () => {
   const dispatch = useDispatch()
-  const shoppingItems = useSelector((state) => state.cart.cartItems)
+  const shoppingItems = useSelector((state) => {
+    console.log(state.cart)
+    return state.cart.cartItems
+  })
   console.log(shoppingItems)
   const handleCloseShopMenu = () => {
-    dispatch(cartActions.showShoppingCart(false))
+    dispatch(showShoppingCart(false))
   }
 
   return (
@@ -20,11 +23,15 @@ const ShoppingMenu = () => {
           <button>Close</button>
         </div>
         <div className="shopping-menu__carts">
-          {shoppingItems.map((item) => {
+          {shoppingItems.map((item, index) => {
+            console.log(item)
             return (
               <ShoppingMenuCart
+                key={index}
+                id={item.id}
                 mainImg={item.mainImg}
                 title={item.title}
+                price={item.price}
                 quantity={item.quantity}
               />
             )

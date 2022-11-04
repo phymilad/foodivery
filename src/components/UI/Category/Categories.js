@@ -17,7 +17,7 @@ export default function Categories() {
     <div className="categories__container">
       {categories.map((category, index) => {
         return (
-          <div className="category__container">
+          <div className="category__container" key={index}>
             <img src={category.imgUrl} alt={category.display} />
             <p>{category.display}</p>
           </div>
