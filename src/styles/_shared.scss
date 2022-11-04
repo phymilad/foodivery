@@ -16,6 +16,20 @@ $mobile-slide-width: 15rem;
   align-items: center;
 }
 
+.button_link{
+  background-color: $main-color;
+  color: #fff;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .3rem;
+  outline: none;
+}
+
+.button_link:hover {
+  background-color: $hover-color;
+  cursor: pointer;
+}
+
 
 // mixins
 

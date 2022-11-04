@@ -1,5 +1,5 @@
 import "../styles/Home.scss"
-import React from "react"
+import React, { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import deliveryImg from "../assets/images/hero.png"
 import Categories from "../components/UI/category/Categories"
@@ -39,7 +39,42 @@ const featureData = [
   },
 ]
 
+const initialPopularFoodsCategory = [
+  { name: "All", isActive: true, image: null },
+  { name: "Burger", isActive: false, image: foodCategoryImg01 },
+  { name: "Pizza", isActive: false, image: foodCategoryImg02 },
+  { name: "Bread", isActive: false, image: foodCategoryImg03 },
+]
+
 export default function Home() {
+  const [popularFoodsCategory, setPopularFoodsCategory] = useState(
+    initialPopularFoodsCategory
+  )
+
+  const [popularFoods, setPopularFoods] = useState(products)
+
+  const handleCategorySelect = (name) => {
+    const popularFoodsCategoryCopy = [...popularFoodsCategory]
+    setPopularFoodsCategory(
+      popularFoodsCategoryCopy.map((item) => {
+        return item.name === name
+          ? { ...item, isActive: true }
+          : { ...item, isActive: false }
+      })
+    )
+  }
+
+  useMemo(() => {
+    const activePopularFoodName = popularFoodsCategory.find(
+      (item) => item.isActive
+    ).name
+    setPopularFoods(
+      activePopularFoodName === "All"
+        ? products
+        : products.filter((item) => item.category === activePopularFoodName)
+    )
+  }, [popularFoodsCategory])
+
   return (
     <div className="home__container">
       <div className="home__introduction-section">
@@ -57,8 +92,8 @@ export default function Home() {
           </section>
 
           <section className="order__link-container">
-            <Link className="order__link-order">Order Now</Link>
-            <Link to={"/foods"} className="order__link-foods">
+            <Link className="button_link">Order Now</Link>
+            <Link to={"/foods"} className="button_link">
               See all foods
             </Link>
           </section>
@@ -110,22 +145,23 @@ export default function Home() {
       <section className="home__popular-foods-container">
         <h2>Popular Foods</h2>
         <div className="home__popular-foods-btn-container">
-          <button className="all__foods-button food__button-active">All</button>
-          <button>
-            <img src={foodCategoryImg01} alt="Hamburger" />
-            Hamburger
-          </button>
-          <button>
-            <img src={foodCategoryImg02} alt="Pizza" />
-            Pizza
-          </button>
-          <button>
-            <img src={foodCategoryImg03} alt="Bread" />
-            Bread
-          </button>
+          {popularFoodsCategory.map((category) => (
+            <button
+              key={category.name}
+              className={`all__foods-button ${
+                category.isActive ? "food__button-active" : ""
+              }`}
+              onClick={() => handleCategorySelect(category.name)}
+            >
+              {category.image && (
+                <img src={category.image} alt={category.name} />
+              )}
+              {category.name}
+            </button>
+          ))}
         </div>
         <div className="home__popular-items-container">
-          {products.map((product, index) => {
+          {popularFoods.map((product, index) => {
             return (
               <ProductCard
                 key={index}

@@ -10,15 +10,15 @@ export default function ProductCard(props) {
     dispatch(addItemToCart(props))
   }
 
-  console.log(props)
-
   return (
     <div className="productCard__container">
       <img scr={props.mainImg} alt={props.title} />
       <h5>{props.title}</h5>
       <div className="productCard__price-button-container">
         <p>{`${props.price}$`}</p>
-        <button onClick={handleAddItemToCart}>Add to card</button>
+        <button className="button_link" onClick={handleAddItemToCart}>
+          Add to card
+        </button>
       </div>
     </div>
   )

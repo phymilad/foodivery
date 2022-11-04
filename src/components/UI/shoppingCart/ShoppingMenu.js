@@ -28,18 +28,22 @@ const ShoppingMenu = () => {
           <button onClick={handleShoppingMenuClose}>Close</button>
         </div>
         <div className="shopping-menu__carts">
-          {cartState.cartItems.map((item, index) => {
-            return (
-              <ShoppingMenuCart
-                key={index}
-                id={item.id}
-                mainImg={item.mainImg}
-                title={item.title}
-                price={item.price}
-                quantity={item.quantity}
-              />
-            )
-          })}
+          {!cartState.cartItems.length ? (
+            <h3>No Item is added yet!</h3>
+          ) : (
+            cartState.cartItems.map((item, index) => {
+              return (
+                <ShoppingMenuCart
+                  key={index}
+                  id={item.id}
+                  mainImg={item.mainImg}
+                  title={item.title}
+                  price={item.price}
+                  quantity={item.quantity}
+                />
+              )
+            })
+          )}
         </div>
         <div className="shopping-menu__total">
           <p>

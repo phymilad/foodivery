@@ -45,14 +45,7 @@
     border-radius: .3rem;
     transition: .3s;
   }
-  .order__link-order {
-    background-color: $main-color;
-    color: #fff;
-    // transition: 0.3s;
-  }
-  .order__link-order:hover {
-    background-color: $hover-color;
-  }
+  
   .order__link-foods {
     border: 1px solid $main-color;
     color: $main-color;

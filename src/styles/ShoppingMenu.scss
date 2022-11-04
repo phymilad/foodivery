@@ -31,9 +31,11 @@
   width: 90%;
   flex-grow: 1;
   margin: 10px auto;
-  // padding: .5rem;
-  // background-color: orange;
+  h3 {
+    text-align: center;
+  }
 }
+
 .shopping-menu__total {
   width: 100%;
   min-height: 5rem;

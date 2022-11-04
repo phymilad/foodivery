@@ -46,14 +46,21 @@ const ShoppingMenuCart = (props) => {
             icon={faPlusSquare}
             size="2x"
             onClick={handleIncrease}
+            className="button"
           />
           <FontAwesomeIcon
             icon={faMinusSquare}
             size="2x"
             onClick={handleDecrease}
+            className="button"
           />
         </div>
-        <FontAwesomeIcon icon={faRemove} size="2x" onClick={handleRemove} />
+        <FontAwesomeIcon
+          icon={faRemove}
+          size="2x"
+          onClick={handleRemove}
+          className="button"
+        />
       </div>
     </div>
   )
