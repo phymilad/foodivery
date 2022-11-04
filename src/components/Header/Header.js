@@ -19,12 +19,10 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const showMobileMenuRef = useRef(null)
-  const cartState = useSelector((state) => state)
-  console.log(cartState)
-
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity)
   const dispatch = useDispatch()
+  const showMobileMenuRef = useRef(null)
+
+  const cartState = useSelector((state) => state)
 
   const toggleMobileMenu = (e) => {
     e.stopPropagation()
@@ -68,7 +66,7 @@ export default function Header() {
       <div className="header__right">
         <span className="cart__icon" onClick={handleShowShoppingCart}>
           <FontAwesomeIcon icon={faCartShopping} size="2x" />
-          <span className="cart__badge">{totalQuantity}</span>
+          <span className="cart__badge">{cartState.cart.cartItems.length}</span>
         </span>
         <span className="user">
           <Link to="/login">
