@@ -24,6 +24,7 @@
   img {
     width: 90%;
     object-fit: contain;
+    padding: .3rem;
   }
 }
 
@@ -39,6 +40,24 @@
     object-fit: contain;
     border: 1px solid #ccc;
     border-radius: .3rem;
+    padding: .3rem;
   }
 }
+
+.food-info__container {
+  text-align: left;
+  align-self: flex-start;
+  h5 {
+    color: $orangish-color;
+    // margin: .3rem 0;
+  }
+  button {
+    margin: .5rem 0;
+  }
+}
+
+.food-extra-info__container {
+  width: 90%;
+}
+
 
