@@ -1,0 +1,31 @@
+@import 'shared';
+
+.product-carts__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  justify-items: center;
+  gap: 1rem;
+}
+
+
+@media (min-width: $tablet-width) {
+  .product-carts__container{
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: $monitor-width) {
+  .product-carts__container{
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+@media (min-width: $monitor-width-large) {
+  .product-carts__container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

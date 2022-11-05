@@ -14,6 +14,7 @@ import foodCategoryImg02 from "../assets/images/pizza.png"
 import foodCategoryImg03 from "../assets/images/bread.png"
 import ProductCard from "../components/UI/productCard/ProductCard"
 import location from "../assets/images/location.png"
+import ProductCarts from "../components/UI/productCard/ProductCarts"
 
 const featureData = [
   {
@@ -160,19 +161,7 @@ export default function Home() {
             </button>
           ))}
         </div>
-        <div className="home__popular-items-container">
-          {popularFoods.map((product, index) => {
-            return (
-              <ProductCard
-                key={index}
-                id={product.id}
-                title={product.title}
-                price={product.price}
-                mainImg={product.image01}
-              />
-            )
-          })}
-        </div>
+        <ProductCarts products={popularFoods} />
       </section>
 
       <section className="location__container">
