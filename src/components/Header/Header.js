@@ -13,7 +13,7 @@ import { showShoppingCart } from "../../store/shopping-cart/cartSlice"
 
 const navLinks = [
   { display: "Home", path: "/home" },
-  { display: "Foods", path: "/allfoods" },
+  // { display: "Foods", path: "/allfoods" },
   { display: "Cart", path: "/cart" },
   { display: "Contact", path: "/contact" },
 ]

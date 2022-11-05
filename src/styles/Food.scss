@@ -1,0 +1,44 @@
+@import 'shared';
+
+.food__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.food-image-info__container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.food-images__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 90%;
+    object-fit: contain;
+  }
+}
+
+
+.food-thumbnails__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // border: 3px solid green;
+  img {
+    width: 30%;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+  }
+}
+
