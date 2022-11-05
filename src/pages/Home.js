@@ -12,9 +12,8 @@ import featureImage03 from "../assets/images/service-03.png"
 import foodCategoryImg01 from "../assets/images/hamburger.png"
 import foodCategoryImg02 from "../assets/images/pizza.png"
 import foodCategoryImg03 from "../assets/images/bread.png"
-import ProductCard from "../components/UI/productCard/ProductCard"
 import location from "../assets/images/location.png"
-import ProductCarts from "../components/UI/productCard/ProductCarts"
+import ProductCards from "../components/UI/productCard/ProductCards"
 
 const featureData = [
   {
@@ -161,7 +160,7 @@ export default function Home() {
             </button>
           ))}
         </div>
-        <ProductCarts products={popularFoods} />
+        <ProductCards products={popularFoods} />
       </section>
 
       <section className="location__container">

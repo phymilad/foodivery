@@ -14,8 +14,11 @@ export default function ProductCard(props) {
   }
 
   const handleGoToDetail = () => {
+    console.log(props.id)
     navigate(`/food/${props.id}`)
   }
+
+  console.log(props)
 
   return (
     <div className="productCard__container">

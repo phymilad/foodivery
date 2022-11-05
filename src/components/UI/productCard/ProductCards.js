@@ -2,7 +2,7 @@ import React from "react"
 import ProductCard from "./ProductCard"
 import "../../../styles/ProductCarts.scss"
 
-export default function ProductCarts({ products }) {
+export default function ProductCards({ products }) {
   return (
     <div className="product-carts__container">
       {products?.map((product) => {

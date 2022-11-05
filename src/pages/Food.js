@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import products from "../assets/fake-data/products"
 import { useDispatch } from "react-redux"
 import { addItemToCart } from "../store/shopping-cart/cartSlice"
-import ProductCarts from "../components/UI/productCard/ProductCarts"
+import ProductCarts from "../components/UI/productCard/ProductCards"
 
 export default function Food() {
   const params = useParams()
@@ -21,7 +21,7 @@ export default function Food() {
     )
     setSimilarProducts(sameCategoryProducts)
     setProduct(product)
-  }, [])
+  }, [params.id])
 
   console.log(similarProducts)
 
